@@ -62,7 +62,7 @@
                 <span class="help is-danger">{{ $message }}</span>
                 @enderror
 
-                <div class="control">
+                <div class="select is-multiple controle">
                     <select name="tags[]" id="tags" multiple>
                         @foreach ($tags as $tag)
                             <option value="{{ $tag->id }}">{{ $tag->name }}</option>

@@ -17,8 +17,10 @@ class ArticleController extends Controller
     {
         if (request("tag")) {
             $articles = Tag::where('name', request('tag'))->firstOrFail()->articles;
+            // $articles = Tag::where('name', request('tag'))->paginate(5)->articles;
         } else {
-            $articles = Article::latest()->paginate(3);
+            // $articles = Article::latest()->paginate(3);
+            $articles = Article::latest()->get();
         }
 
 
@@ -56,6 +58,8 @@ class ArticleController extends Controller
      */
     public function store()
     {
+
+        
         $article = new Article($this->validateArticle());
         $article->user_id = 1;
         $article->save();
@@ -113,7 +117,8 @@ class ArticleController extends Controller
             "title" => "required",
             "slug" => "required",
             "excerpt" => "required",
-            "body" => "required"
+            "body" => "required",
+            "tags" => "exists:tags,id"
         ]);
     }
 }

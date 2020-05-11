@@ -28,6 +28,19 @@
     #article {
         margin-top: 50px
     }
+
+    .create-button {
+        display: block;
+        width: max-content;
+        background: #2b2b2b;
+        padding: 10px;
+        margin: 20px 0 0 20px;
+        border-radius: 5px
+    }
+
+    .create-button a {
+        color: white;
+    }
 </style>
 
 
@@ -35,6 +48,9 @@
 @section('content')
 <div id="wrapper">
     <div id="page" class="container">
+        <div class="create-button">
+            <a href="articles/create">Créer un article</a>
+        </div>
         @forelse ($articles as $article)
         <div id="article">
             <div class="title">
@@ -49,8 +65,6 @@
         <p>No article yet.</p>
         @endforelse
     </div>
-    {{-- {{ $articles->links()) }} --}}
-
 
 </div>
 @endsection

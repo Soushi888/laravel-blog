@@ -20,7 +20,7 @@ class CreateTagsTable extends Migration
             $table->timestamps();
         });
 
-        factory(App\Tag::class, 3)->create();
+        factory(App\Tag::class, 4)->create();
     }
 
     /**
