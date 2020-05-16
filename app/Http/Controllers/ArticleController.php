@@ -108,6 +108,7 @@ class ArticleController extends Controller
      * slug,
      * excerpt,
      * body.
+     * tags
      *
      * @return array
      */

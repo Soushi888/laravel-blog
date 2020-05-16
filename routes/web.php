@@ -15,7 +15,17 @@ use Symfony\Component\HttpFoundation\Request;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $container = new App\Container();
+
+    $container->bind('example', function() {
+        return new App\Example();
+    });
+
+    $example = $container->resolve('example');
+
+    ddd($example);
+
+    // return view('welcome');
 });
 
 Route::get('/clients', function () {
@@ -28,6 +38,9 @@ Route::get('/about', function () {
     ]);
 });
 
+/**
+ * Articles
+ */
 
 Route::get('/articles', 'ArticleController@index')->name('articles.index');
 
