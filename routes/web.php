@@ -1,5 +1,6 @@
 <?php
 
+use App\Example;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -14,19 +15,11 @@ use Symfony\Component\HttpFoundation\Request;
 |
 */
 
-Route::get('/', function () {
-    $container = new App\Container();
 
-    $container->bind('example', function() {
-        return new App\Example();
-    });
 
-    $example = $container->resolve('example');
+Route::get('/', 'PagesController@home');
 
-    ddd($example);
 
-    // return view('welcome');
-});
 
 Route::get('/clients', function () {
     return view('welcome');

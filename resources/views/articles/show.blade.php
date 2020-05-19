@@ -30,7 +30,7 @@
                 <a href="{{ route("articles.index", ['tag' => $tag->name]) }}">{{ $tag->name }}</a>
                 @endforeach
             </div>
-            <p><img src="/images/banner.jpg" alt="" class="image image-full" /> </p>
+            <p><img src="/images/banner.jpg" alt="" class="image image-full" /></p>
             {!! $article->body !!}
         </div>
         <a href="{{ route("articles.edit", $article) }}">Edit the article.</a><br>

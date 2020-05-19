@@ -14,7 +14,7 @@ class Container
     public function resolve($key)
     {
         if (isset($this->bindings[$key]))
-            return $this->bindings[$key];
+            return call_user_func($this->bindings[$key]);
     }
 }
 

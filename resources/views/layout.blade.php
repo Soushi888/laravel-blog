@@ -4,7 +4,7 @@ Design by TEMPLATED
 http://templated.co
 Released for free under the Creative Commons Attribution License
 
-Name       : SimpleWork 
+Name       : SimpleWork
 Description: A two-column, fixed-width design with dark color scheme.
 Version    : 1.0
 Released   : 20140225
@@ -23,6 +23,8 @@ Released   : 20140225
     <link rel="stylesheet" href="css/app.css">
 
     @yield('head')
+
+    
 
 </head>
 

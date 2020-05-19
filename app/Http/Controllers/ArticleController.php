@@ -84,7 +84,7 @@ class ArticleController extends Controller
     /**
      * Persist an edited ressource
      *
-     * @return view
+     * @return void
      */
     public function update(Article $article)
     {
@@ -96,7 +96,7 @@ class ArticleController extends Controller
     /**
      * Delete the ressource
      *
-     * @return view
+     * @return void
      */
     public function destroy(Article $article)
     {
