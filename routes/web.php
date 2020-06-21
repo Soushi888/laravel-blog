@@ -63,8 +63,8 @@ Route::post('/contact', 'ContactController@store');
 /**
  * Payment
  */
-
-Route::get('/payments', 'Payments@create')->middleware('auth');
+Route::get('/payments', 'PaymentsController@create')->middleware('auth');
+Route::post('/payments', 'PaymentsController@store')->middleware('auth');
 
 
 Auth::routes();
