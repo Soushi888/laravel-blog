@@ -1,16 +1,8 @@
-$primary: orange;
-$primary-light: rgb(255, 255, 255);
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
-$secondary: rgb(136, 6, 136);
+// Variables
+@import 'variables';
 
-p {
-    color: auto;
-}
-
-nav .pagination {
-    font-size: 2rem;
-    display: block;
-    margin: auto;
-    width: 200px;
-    color: $primary;
-}
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';

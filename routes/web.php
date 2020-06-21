@@ -54,7 +54,19 @@ Route::delete('/articles/{article}', 'ArticleController@destroy');
 
 
 
+/**
+ * Contact
+ */
+Route::get('/contact', 'ContactController@show');
+Route::post('/contact', 'ContactController@store');
 
-Route::get('/contact', function () {
-    return view('welcome');
-});
+/**
+ * Payment
+ */
+
+Route::get('/payments', 'Payments@create')->middleware('auth');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
