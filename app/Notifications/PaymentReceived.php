@@ -11,14 +11,15 @@ class PaymentReceived extends Notification
 {
     use Queueable;
 
+    public $amount;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($amount)
     {
-        //
+        $this->amount = $amount;
     }
 
     /**
@@ -29,7 +30,7 @@ class PaymentReceived extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['mail', 'database'];
     }
 
     /**
@@ -46,7 +47,7 @@ class PaymentReceived extends Notification
                     ->line('Your payment is OK.')
                     ->line('Don\'t worry.')
                     ->action('Make another', url('/'))
-                    ->line('Thank you again for your donnation !');
+                    ->line('Thank you again for your donnation of ' . $this->amount . '$ !');
     }
 
     /**
@@ -58,7 +59,7 @@ class PaymentReceived extends Notification
     public function toArray($notifiable)
     {
         return [
-            //
+          'amount' => $this->amount  
         ];
     }
 }

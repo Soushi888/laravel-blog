@@ -32,7 +32,7 @@ Released   : 20140225
     <div id="header-wrapper">
         <div id="header" class="container">
             <div id="logo">
-                <h1><a href="/">SimpleWork</a></h1>
+                <h1><a href="/">{{ env('APP_NAME') }}</a></h1>
             </div>
             <div id="menu">
                 <ul>

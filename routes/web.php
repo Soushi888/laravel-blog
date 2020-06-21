@@ -1,6 +1,7 @@
 <?php
 
 use App\Example;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -66,6 +67,8 @@ Route::post('/contact', 'ContactController@store');
 Route::get('/payments', 'PaymentsController@create')->middleware('auth');
 Route::post('/payments', 'PaymentsController@store')->middleware('auth');
 
+
+Route::get('/notifications', 'UserNotificationsController@show')->middleware('auth');
 
 Auth::routes();
 
